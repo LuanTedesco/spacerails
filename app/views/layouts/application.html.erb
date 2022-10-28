@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spacerails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <div id="menu">
+    <%= link_to 'ALIENS', aliens_path %>
+    <%= link_to 'PLANETS', planets_path %>
+    <%= link_to 'POWERS', powers_path %>
+    
+    <%= yield %>
+  </body>
+</html>

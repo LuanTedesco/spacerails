@@ -1,0 +1,37 @@
+<%= form_with(model: alien) do |form| %>
+  <% if alien.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(alien.errors.count, "error") %> prohibited this alien from being saved:</h2>
+
+      <ul>
+        <% alien.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :planet, style: "display: block" %>
+    <%= collection_select(:alien, :planet_id, Planet.all, :id, :name) %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age %>
+  </div>
+
+    <div>
+    <%= form.label :powers %>
+    <%= collection_check_boxes(:alien, :power_ids, Power.all, :id, :name) %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

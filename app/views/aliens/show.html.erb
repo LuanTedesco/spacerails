@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @alien %>
+
+<div>
+  <%= link_to "Edit this alien", edit_alien_path(@alien) %> |
+  <%= link_to "Back to aliens", aliens_path %>
+
+  <%= button_to "Destroy this alien", @alien, method: :delete %>
+</div>
